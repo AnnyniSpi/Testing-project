@@ -1,23 +1,26 @@
 package sia.testing.models;
 
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 
-@Data
+@Getter
+@Setter
 @Entity
-@NoArgsConstructor(force = true)
-@RequiredArgsConstructor
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Answer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    @Column(name = "answer_id")
+    private long answerId;
 
-    private String textAnswer;
+    @Column(name = "answer_text")
+    private String answerText;
 
-    private boolean booleanResponse;
+    @Column(name = "right_answer")
+    private boolean isRightAnswer;
 
     @ManyToOne
     private Question question;

@@ -1,22 +1,21 @@
-package sia.testing.services;
+package sia.testing.services.impl;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import sia.testing.models.Answer;
 import sia.testing.models.Question;
-import sia.testing.repositories.AnswersRepository;
-import sia.testing.repositories.QuestionsRepository;
+import sia.testing.repositories.QuestionRepository;
+import sia.testing.services.TestingService;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Stream;
 
 @Service
 @RequiredArgsConstructor
 public class TestingServiceImp implements TestingService {
 
-    private final QuestionsRepository questionsRepo;
+    private final QuestionRepository questionsRepo;
 
     @Override
     public String checkResultAnswerOnQuestion() {
@@ -29,10 +28,6 @@ public class TestingServiceImp implements TestingService {
         for (Question question : questions) {
             Set<Answer> answers = question.getAnswers();
             for (Answer answer : answers) {
-                if (answer.isBooleanResponse()){
-                    return "true";
-                }
-                return "false";
             }
         }
         return "";

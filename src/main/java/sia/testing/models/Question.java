@@ -1,23 +1,24 @@
 package sia.testing.models;
 
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
-
+import lombok.*;
 import java.util.*;
 
-@Data
+@Getter
+@Setter
 @Entity
-@NoArgsConstructor(force = true)
-@RequiredArgsConstructor
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Question {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "question_id")
+    private long questionId;
 
-    private String bodyQuestion;
+    @Column(name = "question_text")
+    private String questionText;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "question", orphanRemoval = true)
     Set<Answer> answers = new HashSet<>();
