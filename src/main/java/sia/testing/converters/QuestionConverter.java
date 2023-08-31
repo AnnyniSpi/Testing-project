@@ -21,7 +21,6 @@ public class QuestionConverter {
     public Question toEntity(QuestionDto questionDto){
         Question question = Question.builder()
                 .questionText(questionDto.questionText())
-                .answers(new HashSet<>())
                 .build();
 
         Set<Answer> answers = questionDto.answers().stream()

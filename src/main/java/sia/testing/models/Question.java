@@ -20,6 +20,7 @@ public class Question {
     @Column(name = "question_text")
     private String questionText;
 
+    @Builder.Default
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "question", orphanRemoval = true)
     Set<Answer> answers = new HashSet<>();
 
