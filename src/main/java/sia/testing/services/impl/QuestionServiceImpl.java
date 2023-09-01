@@ -61,7 +61,7 @@ public class QuestionServiceImpl implements QuestionService {
         checkDto.forEach(check -> {
             Question questionByText = questionRepository.findByQuestionText(check.question());
             questionByText.getAnswers().forEach(answer -> {
-                if (answer.equals(check.answer())){
+                if (answer.getAnswerText().equals(check.answer())){
                     if (answer.isRightAnswer()){
                       count.getAndIncrement();
                     }
