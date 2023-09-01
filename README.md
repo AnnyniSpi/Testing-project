@@ -60,7 +60,6 @@ Returns all questions with answers
             }
         ]
     },
-  ...
 ]
 ```
 
