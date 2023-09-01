@@ -16,12 +16,53 @@
 
 ## 1. Get all questions
 
+## Request
 ### HTTP GET .../questions
 
 **Summary:**  
 Returns all questions with answers
 
 ### Responses:
+
+```json
+[
+    {
+        "questionText": "Когда необходимо составлять блок-схему программы:",
+        "answers": [
+            {
+                "answerText": "После составления программы",
+                "isRightAnswer": false
+            },
+            {
+                "answerText": "До начала составления самой программы",
+                "isRightAnswer": true
+            },
+            {
+                "answerText": "В процессе составления программы",
+                "isRightAnswer": false
+            }
+        ]
+    },
+    {
+        "questionText": "Наиболее наглядной формой описания алгоритма является структурно-стилизованный метод:",
+        "answers": [
+            {
+                "answerText": "представление алгоритма в виде схемы",
+                "isRightAnswer": true
+            },
+            {
+                "answerText": "словесное описание алгоритма",
+                "isRightAnswer": false
+            },
+            {
+                "answerText": "язык программирования высокого уровня",
+                "isRightAnswer": false
+            }
+        ]
+    },
+  ...
+]
+```
 
 **200 OK**
 
@@ -57,6 +98,23 @@ POST /questions
 
 ### Responses:
 
+```json
+{
+  "questionText": "jjvjvmkvkvbmbmvjgchfxjvlbllnmnngchjc",
+  "answers": [
+    {"answerText": "ssjhvsjhvsj",
+      "isRightAnswer": false
+    },
+    {"answerText": "djhdjwh",
+      "isRightAnswer": true
+    },
+    {"answerText": "dwlkdnqdnqnqndn",
+      "isRightAnswer": false
+    }
+  ]
+}
+```
+
 **200 OK**
 
 ------------------------------------------------------------------------------
@@ -83,6 +141,23 @@ Returns 200 OK when it gets the body of the question
 
 ### Responses:
 
+```json
+{
+  "questionText": "jjvjvmkvkvbmbmvjgchfxjvlbllnmnngchjc",
+  "answers": [
+    {"answerText": "ssjhvsjhvsj",
+      "isRightAnswer": false
+    },
+    {"answerText": "djhdjwh",
+      "isRightAnswer": true
+    },
+    {"answerText": "dwlkdnqdnqnqndn",
+      "isRightAnswer": false
+    }
+  ]
+}
+```
+
 **200 OK**
 
 --------------------------------------------------------------------------
@@ -100,19 +175,53 @@ POST /questions/check
 
 ```json
 [
-  {"question" : "kjucjcjcjcmjcmchcfgfsrxhcjcjggcjgk" , "answer" : "jjhgv"},
-  {"question" : "vtygcyxrxtzerzwrzcgfxfhcjjjvj" , "answer" : "kjjjjjbvvg"},
-  {"question" : "jkibvvvdwwweeedxubiibbbobobobob", "answer" : "hhhj"},
-  {"question" : "looonjvfddddddzwwzwszsz", "answer" : "kiibuuvucucycyxxrx"},
-  {"question" : "zrzrzrzwtrchvhdblnjfrtoipkjihbtrrg", "answer" : "miniibivutcr"},
-  {"question" : "oibobjvrtxxhctrxjboininmkl", "answer" : "kpkmlk"},
-  {"question" : "kmnjvdzfghjfghjbnm", "answer" : "lkkbutctetr"},
-  {"question" : "sdfghjklwertyuiozxcvbnmdfghjkrtyuiodghjkcvbn", "answer" : "fszewzxghcjcyc"},
-  {"question" : "ujyhbtgrfvedcwsazqazrfvujnlplkjhgfd", "answer" : "loihyfrdxch"},
-  {"question" : "cvbnmuytgrertyuiolkjhgfdsxcvbnlkjhgertyu", "answer" : "olikmyhntgv"}
+  {
+    "question" : "kjucjcjcjcmjcmchcfgfsrxhcjcjggcjgk" ,
+    "answer" : "jjhgv"
+  },
+  {
+    "question" : "vtygcyxrxtzerzwrzcgfxfhcjjjvj" ,
+    "answer" : "kjjjjjbvvg"
+  },
+  {
+    "question" : "jkibvvvdwwweeedxubiibbbobobobob",
+    "answer" : "hhhj"
+  },
+  {
+    "question" : "looonjvfddddddzwwzwszsz",
+    "answer" : "kiibuuvucucycyxxrx"
+  },
+  {
+    "question" : "zrzrzrzwtrchvhdblnjfrtoipkjihbtrrg",
+    "answer" : "miniibivutcr"
+  },
+  {
+    "question" : "oibobjvrtxxhctrxjboininmkl",
+    "answer" : "kpkmlk"
+  },
+  {
+    "question" : "kmnjvdzfghjfghjbnm",
+    "answer" : "lkkbutctetr"
+  },
+  {
+    "question" : "sdfghjklwertyuiozxcvbnmdfghjkrtyuiodghjkcvbn",
+    "answer" : "fszewzxghcjcyc"
+  },
+  {
+    "question" : "ujyhbtgrfvedcwsazqazrfvujnlplkjhgfd",
+    "answer" : "loihyfrdxch"
+  },
+  {
+    "question" : "cvbnmuytgrertyuiolkjhgfdsxcvbnlkjhgertyu",
+    "answer" : "olikmyhntgv"
+  }
 ]
 ```
 
 ### Responses:
+
+```json
+    6
+```
 
 **200 OK**
